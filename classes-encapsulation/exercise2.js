@@ -23,3 +23,24 @@
        console.log(Utilities.camelCase("Monkey Banana"))
        // monkeyBanana
 */
+
+class Utilities {
+  static camelCase(str) {
+    let strArray = str.split(" ");
+    let newStr = "";
+    for (let i = 0; i < strArray.length; i++) {
+      let word = strArray[i];
+      if (i === 0) {
+        newStr += word.toLowerCase();
+      } else {
+        newStr += word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      }
+    }
+    return newStr;
+  }
+}
+
+console.log(Utilities.camelCase("hello there"));
+console.log(Utilities.camelCase("HELLO THERE"));
+console.log(Utilities.camelCase("I love cookies"));
+console.log(Utilities.camelCase("Monkey Banana"));
