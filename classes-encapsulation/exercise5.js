@@ -1,4 +1,14 @@
 /*
+       1. If you were to design your own class for your
+       project, what questions would you ask while 
+       deciding whether to make something a static or
+       instance field/method/property?
+
+    2. How about private or public accessors for these
+       static or instance fields/methods/properties?
+*/
+
+/*
    1. When deciding whether to make something a static or instance field/method/property, you should consider the following questions:
       - Does the field/method/property need to be shared among all instances of the class? If yes, it should be static. If not, it should be an instance field/method/property.
       - Does the field/method/property require access to instance-specific data? If yes, it should be an instance field/method/property. If not, it can be static.
@@ -45,14 +55,4 @@
    console.log(car1.getBrand()); // Output: Ford
 
    car1.#privateMethod(); // Error: private method cannot be accessed from outside the class
-*/
-
-/*
-       1. If you were to design your own class for your
-       project, what questions would you ask while 
-       deciding whether to make something a static or
-       instance field/method/property?
-
-    2. How about private or public accessors for these
-       static or instance fields/methods/properties?
 */
