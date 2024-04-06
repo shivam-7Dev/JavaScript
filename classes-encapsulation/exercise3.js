@@ -55,10 +55,11 @@ const animal = new Animal();
 console.log(Object.getOwnPropertyNames(animal)); // ['mammal',eyes]
 console.log(Object.getOwnPropertyNames(animal.__proto__)); //['constructor','describe']
 console.log(Object.getOwnPropertyNames(Animal)); //[ 'length', 'name', 'prototype', 'isMammal', 'knownMammals' ]
-console.log(Object.getOwnPropertyNames(Animal.__proto__)); //[ 'length',      'name', 'arguments',   'caller','constructor', 'apply','bind', 'call', 'toString']
+console.log(Object.getOwnPropertyNames(Animal.__proto__)); //[ 'length','name', 'arguments','caller','constructor', 'apply','bind', 'call', 'toString']
+//Function.prototype
 
 const monkey = new Monkey();
 console.log(Object.getOwnPropertyNames(monkey)); //[ 'mammal', 'eyes', 'height', 'weight' ]
 console.log(Object.getOwnPropertyNames(monkey.__proto__)); //[ 'constructor', 'eatBanana' ]
 console.log(Object.getOwnPropertyNames(Monkey)); //[ 'length', 'name', 'prototype', 'isCute', 'knownMonkeys' ]
-console.log(Object.getOwnPropertyNames(Monkey.__proto__));
+console.log(Object.getOwnPropertyNames(Monkey.__proto__)); //[ 'length', 'name', 'prototype', 'isMammal', 'knownMammals' ]
