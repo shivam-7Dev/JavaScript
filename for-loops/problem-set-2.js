@@ -10,6 +10,14 @@
     HINT3: You don't have to provide all parts of the for loop construct
 */
 
+//for loop syntax
+
+/*
+ for(initializer;condition;update){
+    loop body
+ }
+*/
+
 for (let loggedIn = false, count = 1; loggedIn === false; count++) {
   if (count === 3) {
     loggedIn = true;
