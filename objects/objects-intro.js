@@ -1,4 +1,4 @@
-//keys are always are strins or a map
+//keys are always are strins or a symbols
 
 const animal = {
   id: 42,
