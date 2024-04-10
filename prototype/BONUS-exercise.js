@@ -31,3 +31,7 @@ console.log(Object.getOwnPropertyNames(taylor));
 console.log("-------------");
 // console.log(cleo.__proto__);
 console.log(taylor.__proto__);
+console.log(Object.getOwnPropertyNames(taylor.__proto__));
+console.log(Object.getOwnPropertyNames(taylor.__proto__.constructor));
+console.log(taylor.__proto__.constructor);
+console.log(taylor.__proto__.constructor.name);
