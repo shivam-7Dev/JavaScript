@@ -29,3 +29,38 @@
 
     BONUS: WHY does it work this way?
 */
+console.log("Program started");
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve({ data: "Hello, friend!", error: null });
+  }, 5000);
+});
+console.log(promise);
+console.log("Program in progress.....");
+
+promise
+  .then((res) => {
+    console.log(res);
+    return new Promise((res, rej) => {
+      setTimeout(() => {
+        res("First promise chain complete!");
+      }, 2000);
+    });
+  })
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((res) => console.log(res));
+promise
+  .then((res) => {
+    console.log(res);
+    return new Promise((res, rej) => {
+      setTimeout(() => {
+        res("Second promise chain complete!");
+      }, 10000);
+    });
+  })
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((res) => console.log(res));
