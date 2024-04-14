@@ -13,5 +13,6 @@ try {
   console.error("something bad happened..");
   console.error(error);
 }
+console.error(" happened..");
 
 // ...

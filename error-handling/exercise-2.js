@@ -10,3 +10,12 @@
        or the user Object)? Also, add any appropriate logging 
        you feel makes sense.
 */
+const user = { name: "Misha", age: 22, settings: { colour: "blue" } };
+
+console.log("Creating user.....");
+try {
+  console.log(user.profile.colour);
+} catch (err) {
+  console.log(err);
+}
+console.log("User created");
