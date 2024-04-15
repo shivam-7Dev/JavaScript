@@ -10,3 +10,26 @@
 
     3. Run the code and make sure the correct messages get printed out
 */
+const points = [3, 4, 1, 0, 1, 5, 6];
+
+for (let point of points) {
+  switch (point) {
+    case 0:
+    case 1:
+    case 2: {
+      console.log("Good try!", point);
+      break;
+    }
+
+    case 3:
+    case 4:
+    case 5: {
+      console.log("Very well done!", point);
+      break;
+    }
+    default: {
+      console.log("Wow, shooting for the moon!", point);
+      break;
+    }
+  }
+}

@@ -20,3 +20,5 @@ switch (animal) {
 }
 
 console.log("All done!");
+
+//Note: switch statment works best with premetives datatypes
