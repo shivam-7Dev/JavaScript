@@ -14,3 +14,10 @@
        same line seperated by a " => ". Eg: Cups => 46
        (The loop's body should only have one line of code)
 */
+const store = new Map();
+store.set("cups", 46);
+store.set("candles", 121);
+store.set("vase", 15);
+for (let [key, value] of store) {
+  console.log(`${key}=> ${value}`);
+}
