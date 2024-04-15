@@ -9,3 +9,11 @@
 
     4. Repeat steps 2-3 but with a ternary expression.
 */
+let hungry = true;
+if (hungry) {
+  console.log("Have a cookie!");
+} else {
+  console.log("No cookies for you!");
+}
+
+hungry ? console.log("Have a cookie!") : console.log("No cookie for you!S");

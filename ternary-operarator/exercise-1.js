@@ -11,3 +11,8 @@
   BONUS: Can you shorten this with the short "arrow function
          expression" syntax?
 */
+function over9000(num) {
+  return num > 9000 ? "its running over 9000!!!!" : "Taking a Nappa.....";
+}
+console.log(over9000(9999));
+console.log(over9000(999));

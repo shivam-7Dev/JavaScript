@@ -13,3 +13,25 @@
     BONUS: Can you shorten this with the short "arrow function
            expression" syntax?
 */
+const wizzards = [
+  "Gandalf",
+  "Voldemort",
+  "Harry",
+  "Jafar",
+  "Saruman",
+  "Merlin",
+];
+
+const newData = wizzards.map((wizzard) => {
+  if (wizzard.includes("n")) {
+    return wizzard.replaceAll("n", "*");
+  } else {
+    return wizzard.toUpperCase();
+  }
+});
+console.log(newData);
+
+const data = wizzards.map((wizzard) =>
+  wizzard.includes("n") ? wizzard.replaceAll("n", "*") : wizzard.toUpperCase()
+);
+console.log(data);
