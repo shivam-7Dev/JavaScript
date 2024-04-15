@@ -21,3 +21,34 @@
     Q1: Which of these 2 methods do you prefer?
     Q2: Which of these 2 methods is easier to read?
 */
+function goGetCandies() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ candy: "sour keys", quantity: 10 });
+    }, 2000);
+  });
+}
+
+function sellCandies(data) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(25 * data.quantity);
+    }, 3000);
+  });
+}
+
+async function getdata() {
+  const data = await goGetCandies();
+  const price = await sellCandies(data);
+  console.log(price);
+}
+getdata();
+
+//using old method of promise chaining
+
+const promise1 = goGetCandies();
+promise1
+  .then((data) => {
+    return sellCandies(data);
+  })
+  .then((price) => console.log(price));

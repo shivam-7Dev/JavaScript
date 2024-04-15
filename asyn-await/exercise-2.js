@@ -18,3 +18,31 @@
     7. How long does this take and why?
     8. How could you speed it up?
 */
+function fetchFast() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Fast Done!");
+    }, 2000);
+  });
+}
+function fetchSlow() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Slow Done");
+    }, 6000);
+  });
+}
+console.log("Porgram started");
+
+async function getData() {
+  const fast = await fetchFast();
+  console.log(fast);
+  const slow = await fetchSlow();
+  console.log(slow);
+
+  const together = await Promise.all([fast, slow]);
+  console.log(together);
+}
+
+getData();
+console.log("Program completed");
