@@ -12,3 +12,13 @@
        - randomAmountFromRange(5, 100, 200)
        - randomAmountFromRange(10, 1000, 2000)
 */
+function* randomAmountFromRange(amount, min, max) {
+  for (let i = 0; i < amount; i++) {
+    yield Math.floor(Math.random() * (max - min + 1) + min);
+  }
+}
+
+const generatorObject = randomAmountFromRange(5, 1, 10);
+for (let number of generatorObject) {
+  console.log(number);
+}
