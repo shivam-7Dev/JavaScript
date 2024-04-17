@@ -13,3 +13,25 @@
 
     *There are MANY ways to check if a string has any of several letters
 */
+async function* generatePatter(sentence) {
+  for (let letter of sentence) {
+    yield new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if ("aeiou".includes(letter)) {
+          resolve("*");
+        } else {
+          resolve(letter.toUpperCase());
+        }
+      }, 100);
+    });
+  }
+}
+let asyncIterator = generatePatter("Monkeys are the coolest animal!");
+
+async function printData() {
+  for await (item of asyncIterator) {
+    console.log(item);
+  }
+}
+
+printData();

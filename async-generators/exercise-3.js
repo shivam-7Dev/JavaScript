@@ -17,3 +17,26 @@
           - ^ If we logged "time" each loop we'd get:
           - 100, 200, 400, 800, 1600, 3200 ... etc
 */
+
+// this is example of exponential back off
+
+async function* timeGenerator(time) {
+  let delay = time;
+  while (true) {
+    yield new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(`resolved after ${delay} milli seconds`);
+        delay = delay * 2;
+      }, delay);
+    });
+  }
+}
+
+const asyncIterator = timeGenerator(100);
+
+async function printData() {
+  for await (item of asyncIterator) {
+    console.log(item);
+  }
+}
+printData();

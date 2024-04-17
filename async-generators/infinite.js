@@ -4,7 +4,7 @@ const asyncGenerator = async function* () {
     yield new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(i);
-      }, 1000);
+      }, 5000);
     });
     i++;
     yield* [1, 2, 3];

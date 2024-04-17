@@ -30,7 +30,23 @@ console.log(generatorObject);
 
 // getObjectsAsync();
 
-for await (const promise of generatorObject) {
-  //   const result = await promise;
-  console.log(promise);
+/**
+ * wrong for of loop
+  for (const promise of generatorObject) {
+    const result = await promise;
+    console.log(promise);
+  }
+*/
+async function call() {
+  for await (const promise of generatorObject) {
+    // const result = await promise;
+    console.log(promise);
+  }
+
+  for (const promise of generatorObject) {
+    const result = await promise;
+    console.log(result);
+    // console.log(promise);
+  }
 }
+call();

@@ -1,15 +1,17 @@
 const asyncGenerator = async function* () {
-  yield new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(1);
-    }, 1000);
-  });
+  let i = 0;
+
+  while (true) {
+    yield new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(i);
+        i++;
+      }, 1000);
+    });
+  }
 };
 
 const asyncGeneratorObject = asyncGenerator();
-
-console.log(asyncGenerator);
-console.log(asyncGeneratorObject);
 
 const asyncGeneratorExecuter = async () => {
   for await (const promise of asyncGeneratorObject) {

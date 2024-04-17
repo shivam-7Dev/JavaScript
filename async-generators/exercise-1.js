@@ -11,3 +11,27 @@
 
     *HINT: Math.random() is your friend
 */
+
+async function* randomData() {
+  while (true) {
+    yield new Promise((resolve, reject) => {
+      const random = Math.floor(Math.random() * (2 - 1 + 1) + 1);
+      console.log(random);
+      setTimeout(
+        () => {
+          resolve(random > 1 ? "Fast!" : "Slow!");
+        },
+        random > 1 ? 500 : 3000
+      );
+    });
+  }
+}
+
+const data = randomData();
+
+async function printData() {
+  for await (let item of data) {
+    console.log(item);
+  }
+}
+printData();
