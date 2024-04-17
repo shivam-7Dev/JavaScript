@@ -1,0 +1,1 @@
+this text is being written from the file main.js into hello.txt
