@@ -9,3 +9,11 @@
     BONUS: How does this differ from text content and what might
            fetch be doing with the JSON response for us?
 */
+const url = "https://jsonplaceholder.typicode.com/posts/1";
+const response = fetch(url);
+response
+  .then((res) => {
+    console.log(res.headers.get("Content-Type")); //application/json; charset=utf-8
+    return res.json();
+  })
+  .then((data) => console.log(data));

@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 const response = fetch("https://www.wallhaven.cc");
 
 // response
@@ -27,6 +25,7 @@ const response = fetch("https://www.wallhaven.cc");
 
 const fetchData = async () => {
   const result = await fetch("https://www.wallhaven.cc");
+  console.log(result);
   const html = await result.text();
   console.log(html);
 };

@@ -13,3 +13,17 @@
     HINT: Be careful with the naming of the keys here when trying
           to access the parsed JSON
 */
+const url = "https://pokeapi.co/api/v2/pokemon/pikachu";
+async function fetchData(url) {
+  const response = await fetch(url);
+  console.log(response.headers.get("Content-Type")); //application/json; charset=utf-8
+  const data = await response.json();
+  for (const key in data) {
+    if (Object.hasOwnProperty.call(data, key)) {
+      // const element = data[key];
+      console.log(`${key}`);
+    }
+  }
+  console.log(data.sprites.other["official-artwork"]);
+}
+fetchData(url);

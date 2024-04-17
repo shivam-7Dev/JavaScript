@@ -17,3 +17,36 @@
     * This is purposefully challenging and will require lots of
       Googling to see how to parse the image and save it using Node.
 */
+import fs from "fs/promises";
+
+const url = "https://w.wallhaven.cc/full/7p/wallhaven-7p39gy.png";
+
+async function fetchData(url) {
+  const response = await fetch(url);
+  console.log(response.headers.get("Content-Type")); //image/png
+
+  //   const imageBlob = await response.arrayBuffer();
+  const imageBlob = await response.blob();
+  console.log(imageBlob); //Blob { size: 2631231, type: 'image/png' }
+
+  // fs.writeFile("image.png", imageBlob);
+  //TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer,
+  //TypedArray, or DataView. Received an instance of Blob
+
+  //creating instance of ArrayBuffer from Blob. but this wont work also
+  const arrayBuffer = await imageBlob.arrayBuffer(); // Read as arrayBuffer for efficient conversion
+  //   console.log(arrayBuffer);
+  //   fs.writeFile("image.png", arrayBuffer);
+  //TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer,
+  //TypedArray, or DataView. Received an instance of ArrayBuffer
+
+  const bufferData = Buffer.from(arrayBuffer);
+  //Buffer.from() type of string or Buffer or arraybuffer and not a blob
+  //   console.log(bufferData);
+  fs.writeFile("./image.png", bufferData);
+  console.log("data saved successfully! 🚀");
+
+  // covert to blob=> covert to arrayBuufer => convert to Buffer
+}
+
+fetchData(url);
