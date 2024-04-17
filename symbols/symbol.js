@@ -6,9 +6,12 @@ const character = {
   [Symbol("age")]: 10,
   [4 + 5]: "age",
 };
+console.log(Object.getOwnPropertyNames(character)); //["9", "name", "class", "quote"];
+
+console.log(Object.keys(character)); //["9", "name", "class", "quote"];
 
 for (const key of Object.keys(character)) {
   console.log(key);
 }
 
-console.log(Object.getOwnPropertySymbols(character));
+console.log(Object.getOwnPropertySymbols(character)); //[ Symbol(name), Symbol(age) ]

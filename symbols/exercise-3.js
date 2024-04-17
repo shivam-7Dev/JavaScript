@@ -13,3 +13,28 @@
 
     HINT: An async generator function is the easiest way to do this
 */
+const book = {
+  name: "1984",
+  author: "George Orwell",
+  year: 1949,
+  rating: 4.6,
+  genre: "Science Fiction",
+  movie: true,
+};
+
+book[Symbol.asyncIterator] = async function* () {
+  for (key of Object.keys(this)) {
+    yield new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve([key, this[key]]);
+      }, 1000);
+    });
+  }
+};
+
+async function printData() {
+  for await (item of book) {
+    console.log(item);
+  }
+}
+printData();

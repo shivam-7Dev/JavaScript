@@ -13,3 +13,17 @@
 
     4. How would you access and print out the symbols in "movie"?
 */
+const movie = {
+  name: "Blade Runner",
+  director: "Ridley Scott",
+  year: 1982,
+  rating: 89,
+  genre: "Science Fiction",
+};
+
+// adding properties to object
+
+movie[Symbol("budget")] = 30;
+movie[Symbol("boxoffice")] = 4;
+console.log(Object.getOwnPropertyNames(movie)); //[ 'name', 'director', 'year', 'rating', 'genre' ]
+console.log(Object.getOwnPropertySymbols(movie)); //[ Symbol(budget), Symbol(boxoffice) ]

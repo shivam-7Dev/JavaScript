@@ -12,3 +12,21 @@
 
     HINT: A generator function is the easiest way to do this
 */
+const book = {
+  name: "1984",
+  author: "George Orwell",
+  year: 1949,
+  rating: 4.6,
+  genre: "Science Fiction",
+  movie: true,
+};
+
+book[Symbol.iterator] = function* () {
+  for (let key of Object.keys(this)) {
+    yield [key, this[key]];
+  }
+};
+
+for (let item of book) {
+  console.log(item);
+}
