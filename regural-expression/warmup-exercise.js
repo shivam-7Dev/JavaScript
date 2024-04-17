@@ -13,3 +13,7 @@
 
     5. Print out the results from steps 3 and 4
 */
+let quote = "What is this? A center for ants?";
+let pattern = /ant/;
+console.log(pattern.test(quote));
+console.log(quote.match(pattern));

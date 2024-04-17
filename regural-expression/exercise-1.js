@@ -16,3 +16,18 @@
 
     BONUS: What is an issue with this pattern?
 */
+const email = "monkey@treescom";
+//$ dollar sign marks the end of the string
+// . means any sigle character
+// .com$ this means anycharacter and then com at the end of string
+const emailPattern = /.com$/;
+console.log(emailPattern.test(email));
+console.log(email.match(emailPattern)); //[ 'scom', index: 11, input: 'monkey@treescom', groups: undefined ]
+//here match is scom because s is anycharacter before com
+
+const email2 = "monkey@trees.com";
+// if you want to match the . then you will have to escape it with the help of backslash
+const emailPattern2 = /\.com$/;
+console.log(emailPattern2.test(email)); //false
+console.log(emailPattern2.test(email2)); //true
+console.log(email.match(emailPattern)); //[ 'scom', index: 11, input: 'monkey@treescom', groups: undefined ]

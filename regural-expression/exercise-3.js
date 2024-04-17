@@ -16,3 +16,11 @@
 
     BONUS: What is an issue with this pattern?
 */
+
+const phoneNumber = "020-382-6940";
+//three numbres then - three numbers then - then 4 numbers
+const phonePattern = /\d\d\d-\d\d\d-\d\d\d\d/;
+const phonePattern2 = /\d*-\d*-\d*/;
+
+console.log(phonePattern.test(phoneNumber));
+console.log(phonePattern2.test(phoneNumber));

@@ -20,3 +20,15 @@
 
     BONUS: What is an issue with this pattern?
 */
+const email = "monkey@trees.com";
+const emailPattern = /\w*@\w*\.com$/;
+
+console.log(emailPattern.test(email));
+console.log(email.match(emailPattern));
+
+// 6. Create a regular expression called "emailPattern" that
+//    matches a valid email address
+
+const trueEmailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+console.log(emailPattern.test(email));
