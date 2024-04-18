@@ -25,3 +25,31 @@
        vendingMachine(); // "You got some Chips"
        vendingMachine(); // "Insert 75 more coins"
 */
+
+//Math.floor(Math.random() * (max - min + 1) + min);
+
+function createVendingMachine() {
+  let stock = ["Cola", "Chips", "Chocolate", "Juice", "Nuts"];
+  let coins = 0;
+  function add25() {
+    coins += 25;
+    if (coins === 100) {
+      const arrayLength = stock.length;
+      const randomNumber = Math.floor(
+        Math.random() * (arrayLength - 0 + 1) + 0
+      );
+      const item = stock[randomNumber];
+      console.log(`You got some`, item);
+    } else if (coins < 100) {
+      const coinNeed = 100 - coins;
+      console.log(`Insert ${coinNeed} more coins `);
+    }
+  }
+  return add25;
+}
+const vendingMachine = createVendingMachine();
+vendingMachine(); // "Insert 75 more coins"
+vendingMachine(); // "Insert 50 more coins"
+vendingMachine(); // "Insert 25 more coins"
+vendingMachine(); // "You got some Chips"
+vendingMachine(); // "Insert 75 more coins"

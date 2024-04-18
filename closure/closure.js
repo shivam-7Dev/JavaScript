@@ -16,6 +16,9 @@ const wrapperFunction = () => {
 
 const result = wrapperFunction();
 console.log(result);
+console.log(typeof result);
 
 result();
 // console.log(prices);
+
+console.log(result === wrapperFunction());

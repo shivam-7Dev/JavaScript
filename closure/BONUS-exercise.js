@@ -28,3 +28,27 @@
     const mew = getPokemon("mew"); // Mew fetched from API
     const pikachu2 = getPokemon("pikachu"); // Pikachu was in the Cache
 */
+
+function pokemonDownloader() {
+  let pokemonCache = {};
+  console.log(pokemonCache);
+  async function download(name) {
+    if (pokemonCache[name]) {
+      console.log(`${name} was found in cache`);
+      return pokemonCache[name];
+    } else {
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+      const data = await response.json();
+      pokemonCache[name] = data;
+      console.log(`${name} fetched from API`);
+    }
+  }
+  return download;
+}
+const getPokemon = pokemonDownloader();
+
+(async () => {
+  const pikachu = getPokemon("pikachu"); // Pikachu fetched from API
+  const mew = getPokemon("mew"); // Mew fetched from API
+  const pikachu2 = getPokemon("pikachu"); // Pikachu was in the Cache
+})();

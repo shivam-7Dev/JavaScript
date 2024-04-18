@@ -16,3 +16,18 @@
        text = builder("friend!");
        console.log(text); // "Hello there friend!"
 */
+function stringBuilder() {
+  let result = "";
+  function add(char) {
+    result += char;
+    return result;
+  }
+  return add;
+}
+const builder = stringBuilder();
+console.log(builder);
+let text = builder("Hello ");
+console.log(text);
+text = builder("there ");
+text = builder("friend!");
+console.log(text); // "Hello there friend!"

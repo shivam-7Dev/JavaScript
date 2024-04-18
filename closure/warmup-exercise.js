@@ -16,3 +16,19 @@
 
     * Why is this considered "closure"?
 */
+function createCounter() {
+  let couter = 0;
+  function incrementCounter() {
+    couter++;
+    console.log(couter);
+  }
+  return incrementCounter;
+}
+
+const counter = createCounter();
+console.log(counter);
+counter(); // 1
+counter(); // 2
+counter(); // 3
+console.log(counter);
+counter(); // 4
