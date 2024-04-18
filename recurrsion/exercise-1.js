@@ -18,3 +18,16 @@
 
     HINT: What are the base-cases? (I thought of 4)
 */
+
+const palindrome = function (string, start) {
+  let end = string.length - 1 - start;
+  if (start >= end) return true;
+
+  if (string[start] != string[end]) {
+    return false;
+  } else {
+    return palindrome(string, start + 1);
+  }
+};
+const data = palindrome("racecar", 0);
+console.log(data);

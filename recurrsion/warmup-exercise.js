@@ -15,3 +15,18 @@
 
     HINT: What is the base-case vs the "regular" cases here?
 */
+const fizzbuzz = function (start, end) {
+  if (start === end + 1) {
+    return;
+  }
+  if (start % 3 === 0 && start % 5 === 0) {
+    console.log("FizzBuzz", start);
+  }
+  if (start % 3 === 0) console.log("Fizz", start);
+  if (start % 5 === 0) console.log("Buzz", start);
+  else console.log(start);
+
+  fizzbuzz(start + 1, end);
+};
+
+fizzbuzz(1, 20);

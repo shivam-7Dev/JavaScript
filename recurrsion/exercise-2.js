@@ -21,3 +21,19 @@
           on Google/MDN
     HINT2: What are the base-cases and what do we want to return?
 */
+
+function flatten(array) {
+  let result = [];
+  for (const item of array) {
+    if (Array.isArray(item)) {
+      result = [...result, ...flatten(item)];
+    } else {
+      result.push(item);
+    }
+  }
+
+  return result;
+}
+console.log(flatten([1, 2, 3]));
+console.log(flatten([1, 2, 3, [1, 2, 3]]));
+console.log(flatten([1, [4, 5, 6, [7, 8, 9]], 2, 3]));
