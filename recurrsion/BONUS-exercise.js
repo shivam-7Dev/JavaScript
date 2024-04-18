@@ -42,7 +42,7 @@
 
 */
 
-const document = {
+const node = {
   childNodes: [
     {
       nodeName: "html",
@@ -100,3 +100,24 @@ const document = {
     },
   ],
 };
+
+function constructDOM(node) {
+  //base case
+  if (node.innerText) return node.innerText;
+  let html = "";
+
+  //traverse over the child node array and create tags
+  for (let chileNode of node.childNodes) {
+    //create opening tag
+    html += `<${chileNode.nodeName}>`;
+
+    //add child node or inner elemets
+    html += constructDOM(chileNode);
+
+    //create closing tag
+    html += `<${chileNode.nodeName}>`;
+  }
+  return html;
+}
+
+console.log(constructDOM(node));
