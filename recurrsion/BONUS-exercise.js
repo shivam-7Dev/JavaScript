@@ -115,7 +115,7 @@ function constructDOM(node) {
     html += constructDOM(chileNode);
 
     //create closing tag
-    html += `<${chileNode.nodeName}>`;
+    html += `</${chileNode.nodeName}>`;
   }
   return html;
 }
