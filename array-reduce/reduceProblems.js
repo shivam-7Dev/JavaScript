@@ -1,66 +1,45 @@
 /**
  * Example of redcuing to an object
  * genereate a object which will have key age and its value will be the total number of person whose age is the age
+ * finding the count of total users of a perticulat age
  * { 25:2,43: 4 }
  */
 
 const arrayOfUsers = [
   {
     firstName: "John",
-    lastName: "Doe",
     age: 25,
     email: "john.doe@example.com",
   },
+
   {
-    firstName: "Alice",
-    lastName: "Smith",
-    age: 30,
-    email: "alice.smith@example.com",
-  },
-  {
-    firstName: "Bob",
     lastName: "Johnson",
     age: 35,
     email: "bob.johnson@example.com",
   },
+
   {
-    firstName: "Jane",
-    lastName: "Doe",
-    age: 25,
-    email: "jane.doe@example.com",
-  },
-  {
-    firstName: "Charlie",
     lastName: "Brown",
     age: 40,
     email: "charlie.brown@example.com",
   },
+
   {
-    firstName: "Emily",
-    lastName: "Davis",
-    age: 35,
-    email: "emily.davis@example.com",
-  },
-  {
-    firstName: "David",
     lastName: "Miller",
     age: 30,
     email: "david.miller@example.com",
   },
   {
-    firstName: "Sarah",
     lastName: "Wilson",
     age: 45,
     email: "sarah.wilson@example.com",
   },
   {
-    firstName: "Michael",
     lastName: "Lee",
     age: 25,
     email: "michael.lee@example.com",
   },
   {
-    firstName: "Olivia",
     lastName: "Taylor",
     age: 40,
     email: "olivia.taylor@example.com",
@@ -83,3 +62,46 @@ const result = arrayOfUsers.reduce((acc, curr) => {
 }, {});
 
 console.log(result);
+//{ '25': 2, '30': 1, '35': 1, '40': 2, '45': 1 }
+
+/**
+ * getting list of all user in a paricular group
+ *
+ */
+
+const ageList = arrayOfUsers.reduce((acc, curr) => {
+  const age = curr.age;
+
+  /**
+    check if age is present in the acc object
+    if age is present the append the curr user to that array
+  */
+
+  if (age in acc) {
+    acc[age].push(curr);
+    return acc;
+  }
+
+  /**
+   * of age if not present then initalise it to array and put the value of curr object into it
+   */
+  acc[age] = [curr];
+  return acc;
+}, {});
+
+console.log(ageList);
+/**
+    {
+     25: [
+        { firstName: "John", age: 25, email: "john.doe@example.com" },
+        { lastName: "Lee", age: 25, email: "michael.lee@example.com" },
+        ],
+    30: [{ lastName: "Miller", age: 30, email: "david.miller@example.com" }],
+    35: [{ lastName: "Johnson", age: 35, email: "bob.johnson@example.com" }],
+    40: [
+        { lastName: "Brown", age: 40, email: "charlie.brown@example.com" },
+        { lastName: "Taylor", age: 40, email: "olivia.taylor@example.com" },
+    ],
+    45: [{ lastName: "Wilson", age: 45, email: "sarah.wilson@example.com" }],
+    }
+ */
