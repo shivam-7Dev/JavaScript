@@ -13,34 +13,34 @@ const arrayOfUsers = [
   },
 
   {
-    lastName: "Johnson",
+    firstName: "Johnson",
     age: 35,
     email: "bob.johnson@example.com",
   },
 
   {
-    lastName: "Brown",
+    firstName: "Brown",
     age: 40,
     email: "charlie.brown@example.com",
   },
 
   {
-    lastName: "Miller",
+    firstName: "Miller",
     age: 30,
     email: "david.miller@example.com",
   },
   {
-    lastName: "Wilson",
+    firstName: "Wilson",
     age: 45,
     email: "sarah.wilson@example.com",
   },
   {
-    lastName: "Lee",
+    firstName: "Lee",
     age: 25,
     email: "michael.lee@example.com",
   },
   {
-    lastName: "Taylor",
+    firstName: "Taylor",
     age: 40,
     email: "olivia.taylor@example.com",
   },
@@ -94,14 +94,14 @@ console.log(ageList);
     {
      25: [
         { firstName: "John", age: 25, email: "john.doe@example.com" },
-        { lastName: "Lee", age: 25, email: "michael.lee@example.com" },
+        { firstName: "Lee", age: 25, email: "michael.lee@example.com" },
         ],
-    30: [{ lastName: "Miller", age: 30, email: "david.miller@example.com" }],
-    35: [{ lastName: "Johnson", age: 35, email: "bob.johnson@example.com" }],
+    30: [{ firstName: "Miller", age: 30, email: "david.miller@example.com" }],
+    35: [{ firstName: "Johnson", age: 35, email: "bob.johnson@example.com" }],
     40: [
-        { lastName: "Brown", age: 40, email: "charlie.brown@example.com" },
-        { lastName: "Taylor", age: 40, email: "olivia.taylor@example.com" },
+        { firstName: "Brown", age: 40, email: "charlie.brown@example.com" },
+        { firstName: "Taylor", age: 40, email: "olivia.taylor@example.com" },
     ],
-    45: [{ lastName: "Wilson", age: 45, email: "sarah.wilson@example.com" }],
+    45: [{ firstName: "Wilson", age: 45, email: "sarah.wilson@example.com" }],
     }
  */
